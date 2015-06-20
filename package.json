@@ -1,0 +1,38 @@
+{
+  "name": "rxjsgame",
+  "version": "1.0.0",
+  "description": "project to practice using rxjs and reactive functional programming",
+  "main": "index.js",
+  "scripts": {
+    "serveit": "browser-sync start --files 'src/**/*.html,src/**/*.css,src/**/*.js' --server 'src'"
+  },
+  "keywords": [
+    "rxjs"
+  ],
+  "author": "Adam Bertrand",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.7.6",
+    "jspm": "^0.15.6"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "src"
+    },
+    "dependencies": {
+      "css": "github:systemjs/plugin-css@^0.1.11",
+      "event-emitter": "npm:event-emitter@^0.3.3",
+      "immutable": "npm:immutable@^3.7.3",
+      "jquery": "github:components/jquery@^2.1.4",
+      "json": "github:systemjs/plugin-json@^0.1.0",
+      "rx": "npm:rx@^2.5.2",
+      "rx-dom": "npm:rx-dom@^5.0.4",
+      "text": "github:systemjs/plugin-text@^0.0.2"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    }
+  }
+}

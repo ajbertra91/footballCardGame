@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <title>RxJS Exporation</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <div id="action-confirm">Call the Play</div>
+    <div id="message"></div>
+    <div id="current-play">
+      <div id="offense-target" class="empty offense"></div>
+      <div id="defense-target" class="empty defense"></div>
+      <div id="playbook-target" class="empty playbook"></div>
+    </div>
+    <div id="not-user-hand"></div>
+    <div id="user-hand"></div>
+  </div>
+
+
+  <script src="/jspm_packages/system.js"></script>
+  <script src="/config.js"></script>
+  <script>
+    System.import('./app'); // note: no .js on the file
+  </script>
+</body>
+</html>

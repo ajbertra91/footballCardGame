@@ -1,0 +1,265 @@
+#app {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background: url('images/football-field.png') 0 50% no-repeat;
+  background-size: 100%;
+
+  overflow: hidden;
+}
+
+.game-card {
+  height: 175px;
+  width: 125px;
+  border-radius: 4px;
+  margin-right: 5px;
+  border-width: 5px;
+  border-style: solid;
+  cursor: pointer;
+  border-width: 5px;
+  box-shadow: 0 0 4px black;
+  position: absolute;
+  transition: all 0.2s ease;
+  transform: scale(0.5) translate3d(0,0,0) rotate(0deg);
+  font-family: helvetica, sans-serif;
+}
+/*
+ * the ::before element is for the click target
+ */
+.game-card::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+}
+.game-card:hover {
+  transform: scale(1) translate3d(0,-50px,0);
+}
+[data-type="offense"] {
+  border-color: rgb(32, 71, 194);
+}
+[data-type="offense"]:hover {
+  border-color: rgb(133, 163, 255);
+  transform: rotate(0deg);
+  z-index: 100 !important;
+}
+[data-type="defense"] {
+  border-color: rgb(234, 186, 83);
+}
+[data-type="defense"]:hover {
+  border-color: rgb(255, 243, 216);
+  transform: rotate(0deg);
+  z-index: 100 !important;
+}
+[data-type="playbook"] {
+  border-color: rgb(76, 189, 86);
+}
+[data-type="playbook"]:hover {
+  border-color: rgb(153, 250, 162);
+  transform: rotate(0deg);
+  transform: translate3d(-100px,0,0);
+  z-index: 100 !important;
+}
+.position {
+  height: 40px;
+  font-size: 30px;
+  color: white;
+}
+.dollar-value {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.player-name {
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+} 
+.play-type {
+  color: white;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.play-value {
+  position: absolute;
+  top: -8px;
+  right: 0px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+}
+.play-title {
+  font-style: italic;
+  font-size: 12px;
+  color: green;
+}
+.play-bonus .position,
+.play-bonus .value {
+  font-size: 20px;
+  color: green;
+  display: inline-block;
+}
+
+.stats {
+  background-color: #fff;
+  padding: 5px;
+  font-size: 11px;
+  overflow: hidden;
+}
+.stats > div {
+  overflow: hidden;
+}
+.stats .title {
+  float: left;
+}
+.stats .value {
+  float: right;
+  font-weight: bold;
+}
+.stats.blocking {
+  background-color: rgba(0,182,255,0.8);
+  color: rgb(255,255,255);
+}
+.stats.rushing {
+  background-color: rgba(218,68,68,0.8);
+  color: rgb(255,255,255);
+}
+
+#message {
+  outline: 1px solid red;
+  width: auto;
+  min-width: 100px;
+  max-width: 600px;
+  min-height: 50px;
+  max-height: 300px;
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  margin-left: 50px;
+}
+
+#current-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -250px;
+  margin-top: -100px;
+  
+  height: 200px;
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+#current-play .game-card {
+  transform: scale(0.9) translate3d(0,0,0);
+}
+#current-play .game-card:hover {
+  transform: scale(1) translate3d(0,0,0);
+}
+#offense-target,
+#defense-target,
+#playbook-target
+ {
+  position: relative;
+}
+#offense-target .game-card {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}
+#defense-target .game-card {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}
+#playbook-target .game-card {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}
+.empty {
+  background: rgba(255,255,255,0.5);
+  height: 175px;
+  width: 125px;
+  border-width: 5px;
+  border-style: dashed;
+  border-color: #444;
+  border-radius: 4px;
+  box-shadow: 0 0 4px black;
+}
+.empty.offense {
+  border-color: blue;
+  background: rgba(255,255,255,0.5);
+}
+.empty.defense {
+  border-color: orange;
+  background: rgba(255,255,255,0.5);
+}
+.empty.playbook {
+  border-color: green;
+  background: rgba(255,255,255,0.5);
+}
+
+
+
+
+#user-hand {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  margin-left: -250px;
+  height: 200px;
+  width: 500px;
+  outline: 1px solid red;
+}
+
+#action-confirm {
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  margin-left: -150px;
+  padding: 20px;
+  background-image: linear-gradient(rgba(83, 89, 173, 0.8) 0%, rgba(34, 40, 124, 0.9) 100%);
+  border-radius: 3px;
+  border: 1px solid rgba(255,255,255,0.8);
+  width: 300px;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(255,255,255);
+  box-shadow: 0 0 8px rgba(0,0,0,0.3)
+  transform: translate3d(0,0,0);
+  font-family: helvetica, sans-serif;
+}
+#action-confirm:hover {
+  cursor: pointer;
+  background-image: linear-gradient(rgba(83, 89, 173, 0.95) 0%, rgba(34, 40, 124, 1) 100%);
+}
+#action-confirm:active {
+  box-shadow: 0 0 8px rgba(0,0,0,0);
+  transform: translate3d(0,2px,0);
+}
+
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}

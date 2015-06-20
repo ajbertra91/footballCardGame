@@ -1,0 +1,1 @@
+module.exports = require("npm:rx-dom@5.0.4/index");
