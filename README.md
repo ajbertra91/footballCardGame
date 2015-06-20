@@ -6,7 +6,7 @@
 
 may need to install JSPM
 
-`npm install jspm`
+`npm install jspm -g`
 
 ###Run
 
