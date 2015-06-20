@@ -271,7 +271,7 @@ function removePlayDefCard(cardElem) { playdefenseCardElem.removeChild(cardElem)
 function removePlayPlbCard(cardElem) { playplaybookCardElem.removeChild(cardElem); }
 
 // ==============================================================================
-// SCORING
+// SCORING TODO --- FINISH!!!
 // ==============================================================================
 function runScoring() {
   print('...running scoring');
