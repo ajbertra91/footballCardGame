@@ -5,8 +5,8 @@
   bottom: 0;
   left: 0;
 
-  background: url('images/football-field.png') 0 50% no-repeat;
-  background-size: 100%;
+  /*background: url('images/football-field.png') 0 50% no-repeat;
+  background-size: 100%;*/
 
   overflow: hidden;
 }
@@ -21,9 +21,10 @@
   cursor: pointer;
   border-width: 5px;
   box-shadow: 0 0 4px black;
-  position: absolute;
+  flex: 1 0 auto;
+  position: relative;
+  transform: scale(0.8) translate3d(0,0,0);
   transition: all 0.2s ease;
-  transform: scale(0.5) translate3d(0,0,0) rotate(0deg);
   font-family: helvetica, sans-serif;
 }
 /*
@@ -46,7 +47,6 @@
 }
 [data-type="offense"]:hover {
   border-color: rgb(133, 163, 255);
-  transform: rotate(0deg);
   z-index: 100 !important;
 }
 [data-type="defense"] {
@@ -54,7 +54,6 @@
 }
 [data-type="defense"]:hover {
   border-color: rgb(255, 243, 216);
-  transform: rotate(0deg);
   z-index: 100 !important;
 }
 [data-type="playbook"] {
@@ -62,8 +61,6 @@
 }
 [data-type="playbook"]:hover {
   border-color: rgb(153, 250, 162);
-  transform: rotate(0deg);
-  transform: translate3d(-100px,0,0);
   z-index: 100 !important;
 }
 .position {
@@ -220,11 +217,12 @@
 #user-hand {
   position: absolute;
   bottom: -50px;
-  left: 50%;
+  left: 20%;
   margin-left: -250px;
   height: 200px;
-  width: 500px;
+  width: 80%;
   outline: 1px solid red;
+  display: flex;
 }
 
 #action-confirm {

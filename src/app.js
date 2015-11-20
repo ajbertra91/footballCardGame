@@ -62,7 +62,7 @@ import { Card } from '../components/Card';
  */
 // OFFENSE
 const C  = getCenter();
-const G  = getGuards()
+const G  = getGuards(); 
 const T  = getTackles();
 const QB = getQuarterback();
 const RB = getRunningBacks();
@@ -230,23 +230,11 @@ let hand$ = Observable.fromEvent(hand.emitter, 'card-added');
 let offHand$ = hand$.filter(card => card.type === 'offense');
 let defHand$ = hand$.filter(card => card.type === 'defense');
 let plbHand$ = hand$.filter(card => card.type === 'playbook');
-offHand$.subscribe( card => addOffCard(Card(card)) );
-defHand$.subscribe( card => addDefCard(Card(card)) );
-plbHand$.subscribe( card => addPlbCard(Card(card)) );
+offHand$.subscribe( card => addCard(Card(card)) );
+defHand$.subscribe( card => addCard(Card(card)) );
+plbHand$.subscribe( card => addCard(Card(card)) );
 
-function addOffCard(cardElem) { 
-  cardElem.style.left = (hand.count('offense') * 50 - 75) + 'px';
-  cardElem.style.webkitTransform = 'rotate(' + (hand.count('offense') * 2) + 'deg)'
-  handElem.appendChild(cardElem);
-}
-function addDefCard(cardElem) { 
-  cardElem.style.left = (hand.count('defense') * 50 + 75) + 'px';
-  cardElem.style.webkitTransform = 'rotate(' + (hand.count('defense') * 2) + 'deg)'
-  handElem.appendChild(cardElem);
-}
-function addPlbCard(cardElem) { 
-  cardElem.style.left = (hand.count('playbook') * 50 + 225) + 'px';
-  cardElem.style.webkitTransform = 'rotate(' + (hand.count('playbook') * 2) + 'deg)'
+function addCard(cardElem) { 
   handElem.appendChild(cardElem);
 }
 
